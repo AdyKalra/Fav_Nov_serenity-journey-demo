@@ -12,4 +12,4 @@ Feature: Delete a todo
     Given Joe has a todo list containing Buy some milk,Buy Petrol
     And Joe has marked the Buy some milk action as complete
     When Joe deletes the todo action Buy some milk
-    Then Joe's todo list should contain Buy Gas
+    Then Joe's todo list should contain Buy Petrol

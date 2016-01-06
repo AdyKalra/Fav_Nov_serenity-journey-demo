@@ -11,10 +11,12 @@ import net.thucydides.core.annotations.Issue;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import static net.serenitybdd.demos.todos.tasks.DisplayedItems.theDisplayedItems;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static org.hamcrest.Matchers.contains;
 
@@ -29,7 +31,6 @@ public class TidyUpTheTodoList {
     WebDriver hisBrowser;
 
     @Steps AddItems addedSomeItems;
-    @Steps DisplayedItems theDisplayedItems;
     @Steps ClearCompletedItems clearTheCompletedItems;
 
     Actor joe = Actor.named("Joe");
@@ -49,7 +50,7 @@ public class TidyUpTheTodoList {
                 clearTheCompletedItems
         );
 
-        then(joe).should(seeThat(theDisplayedItems, contains("Walk the dog")));
+        then(joe).should(seeThat(theDisplayedItems(), contains("Walk the dog")));
 
     }
 }

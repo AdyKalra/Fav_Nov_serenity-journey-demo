@@ -6,8 +6,8 @@ import net.serenitybdd.demos.todos.pages.ApplicationHomePage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.tasks.Open;
+import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Step;
-import org.junit.AssumptionViolatedException;
 import org.openqa.selenium.ElementNotVisibleException;
 
 import java.util.List;
@@ -36,11 +36,11 @@ public class AddItems implements Performable {
         return called(ImmutableList.copyOf(thingsToDo));
     }
 
-    @Step
-    public void failAssumption() {
-        throw new AssumptionViolatedException("oh crap");
-
-    }
+//    @Step
+//    public void failAssumption() {
+//        throw new AssumptionViolatedException("oh crap");
+//
+//    }
 
     @Step
     public void failedAssert() {
